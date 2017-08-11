@@ -1,0 +1,74 @@
+/* Type face for unhighlighted words */
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/raleway-extralight-webfont.woff2') format('woff2'),
+         url('fonts/raleway-extralight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Type face for highlighted words */
+@font-face {
+    font-family: 'Lobster';
+    src: url('fonts/lobster_1.3-webfont.woff2') format('woff2'),
+         url('lfonts/obster_1.3-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.MMM-MyWordClock .clock-grid {
+  width: 100%;
+  font-family: "Raleway";
+  font-size: 12.038vw; /* 130px / 1080 * 100 */
+  line-height: 12vh;
+  font-weight: normal;
+  color: #666;
+}
+
+
+.MMM-MyWordClock .highlighted {
+  font-family: 'Lobster';
+  font-size: 12.778vw; /* 138px / 1080 * 100 */
+  display: inline-block;
+  top: -0.26vh; /* Baselines don't match. this shifts the text up a few pixels */
+  position: relative;
+}
+
+.MMM-MyWordClock .clock-grid.EN_16x9 {
+  line-height: 20vh;
+  font-size: 7.292vw; /* 140px / 1920 * 100 */
+}
+
+.MMM-MyWordClock .clock-grid.EN_16x9 .highlighted {
+  font-size: 7.813vw;  /* 150px / 1920 * 100 */
+}
+
+
+.MMM-MyWordClock .clock-grid.c1 .highlighted {
+  color: #ff077c;
+}
+.MMM-MyWordClock .clock-grid.c2 .highlighted {
+  color: #99ff07;
+}
+.MMM-MyWordClock .clock-grid.c3 .highlighted {
+  color: #ffd200;
+}
+.MMM-MyWordClock .clock-grid.c4 .highlighted {
+  color: #01ccff;
+}
+.MMM-MyWordClock .clock-grid.c5 .highlighted {
+  color: #ff012b;
+}
+.MMM-MyWordClock .clock-grid.c6 .highlighted {
+  color: #f0ff00;
+}
+
+.MMM-MyWordClock .clock-grid div {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
