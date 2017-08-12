@@ -10,7 +10,6 @@ to a screensaver.  After a timeout your configure, all of your modules are hidde
 
 ![Screen Shot](/../screenshots/MMM-MyWordClock.png?raw=true "Screen Shot")
 
-
 It requires the use of paviro's MMM-PIR-Sensor module to detect motion and
 cancel the clock display. https://github.com/paviro/MMM-PIR-Sensor
 
@@ -29,11 +28,10 @@ more or less the same thing are as follows:
      "It's half past one" instead of "It's half two"
    * Adding other layouts is fairly trivial, and adding multiple
      layouts for any given langauge is possible (e.g.: An English langauge
-     version for tall 1080p resolution, another for 1080p wide, a third for DE_1080p tall, etc).
+     version for tall HDTV resolution, another for HDTV wide, a third for German tall, etc).
    * Layouts are not restricted to the same amount of lines or even the same
      amount of words per line as the english version.  This means that
-     translations or even other layouts in the same language need to follow
-     the same pattern.
+     translations or even other layouts in the same language do not need to follow the same pattern.
    * Each layout name is added to the DOM wrapper as a class name so styling
      each layout specifically is possible while maitaining style inheritance
      from the defaults where applicable.
