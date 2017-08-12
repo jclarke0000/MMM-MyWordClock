@@ -39,6 +39,10 @@ more or less the same thing are as follows:
      from the defaults where applicable.
    * It's fun to learn new things!
 
+## Installation
+
+Navigate into your MagicMirror `modules` folder and execute<br>
+`git clone https://github.com/jclarke0000/MMM-MyWordClock.git`.
 
 ## Configuration
 
