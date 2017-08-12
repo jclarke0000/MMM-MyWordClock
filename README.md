@@ -8,6 +8,9 @@ Inspired by the QLockTwo (http://qlocktwo.com/), this displays the
 current time using words when MagicMirror is idle.  It works similar
 to a screensaver.  After a timeout your configure, all of your modules are hidden, and the clock is displayed full screen.  Then, when motion is detected, it hides and once again shows all your regular modules.
 
+![Screen Shot](/../screenshots/MMM-MyWordClock.png?raw=true "Screen Shot")
+
+
 It requires the use of paviro's MMM-PIR-Sensor module to detect motion and
 cancel the clock display. https://github.com/paviro/MMM-PIR-Sensor
 
@@ -15,7 +18,7 @@ This is baased on the great work done by brobergp on MMM-TextClock.
 https://github.com/brobergp/MMM-TextClock.
 
 While not a fork -- this module's code is quite different -- functionally
-it behaves very similarly. My reason's for writing a new module that does 
+it behaves very similarly. My reasons for writing a new module that does 
 more or less the same thing are as follows:
 
    * I wanted my word clock to be full screen
@@ -38,6 +41,10 @@ more or less the same thing are as follows:
 
 
 ## Configuration
+
+*NOTE* for this module to work correctly, you need to place it in 
+`position: "middle_center"` in your config.js.  Also, don't give
+it a header.  See below for an example config entry.
 
 <table>
   <thead>
@@ -62,3 +69,16 @@ more or less the same thing are as follows:
   </tbody>
 </table>
 
+## Example Configuration
+
+```
+{
+  module: "MMM-MyWordClock",
+  position: "middle_center", //this is important!
+  disabled: true,
+  config: {
+    showClockTimeOut: 5 * 60 * 1000, //5 minutes
+    layout: "EN_9x16"
+  }
+}
+```
