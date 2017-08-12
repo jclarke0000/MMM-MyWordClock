@@ -32,19 +32,16 @@ Module.register("MMM-MyWordClock", {
 
   defaults: {
     showClockTimeOut: 5 * 60 * 1000, //5 minutes
-    animationSpeed: 500,
-    layout: "EN_9x16",
-    hideClockNotification: "USER_PRESENCE",
-    hideClockNotificationPayload: true
+    animationSpeed: 1000,
+    layout: "EN_9x16"
   },
 
   start: function() {
     console.log("Starting module: " + this.name);
     var self = this;
-    thisInstance = this;
 
     setInterval(function() {
-      self.updateDom(500);
+      self.updateDom(1000);
     }, 5 * 1000);
 
     this.colorCounter = 1;
@@ -63,7 +60,6 @@ Module.register("MMM-MyWordClock", {
   },
 
   resetTimers: function() {
-    console.log("=============== Resetting timers ");
     var self = this;
     clearTimeout(this.showTimer);
     this.showTimer = setTimeout(function() {
@@ -73,16 +69,12 @@ Module.register("MMM-MyWordClock", {
 
   showClock: function(instance) {
 
-    console.log("Showing Word Clock");
-    
     clearTimeout(instance.showTimer);
 
     //hide all current modules
     var modules = MM.getModules();
     modules.enumerate(function(module) {
-      module.hide(instance.config.animationSpeed, function () {
-        console.log(module.name + " is hidden.");
-      }, {lockString: instance.identifier});
+      module.hide(instance.config.animationSpeed, {lockString: instance.identifier});
     });
 
     //show this module
@@ -101,9 +93,7 @@ Module.register("MMM-MyWordClock", {
       var modules = MM.getModules();
       modules.enumerate(function(module) {
         if (module.identifier != instance.identifier) {
-          module.show(instance.config.animationSpeed, function () {
-            console.log(module.name + " is hidden.");
-          }, {lockString: instance.identifier});
+          module.show(instance.config.animationSpeed, {lockString: instance.identifier});
         }
       });
 
@@ -123,7 +113,7 @@ Module.register("MMM-MyWordClock", {
 
     var theTime = moment();
     if (theTime.minutes() >= 35 ) {
-      theTime.add(1, 'hours');
+      theTime.add(1, "hours");
     }
 
     var hourVal = theTime.hour();
