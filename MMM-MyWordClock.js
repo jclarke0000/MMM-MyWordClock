@@ -97,6 +97,8 @@ Module.register("MMM-MyWordClock", {
         }
       });
 
+      instance.resetTimers();
+
     }, instance.config.animationSpeed);      
 
 
