@@ -45,7 +45,7 @@ Navigate into your MagicMirror `modules` folder and execute<br>
 ## Configuration
 
 *NOTE* for this module to work correctly, you need to place it in 
-`position: "middle_center"` in your config.js.  Also, don't give
+`position: "fullscreen_above"` in your config.js.  Also, don't give
 it a header.  See below for an example config entry.
 
 <table>
@@ -76,7 +76,7 @@ it a header.  See below for an example config entry.
 ```
 {
   module: "MMM-MyWordClock",
-  position: "middle_center", //this is important!
+  position: "fullscreen_above", //this is important!
   disabled: true,
   config: {
     showClockTimeOut: 5 * 60 * 1000, //5 minutes
