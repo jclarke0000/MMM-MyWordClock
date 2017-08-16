@@ -8,7 +8,7 @@ Inspired by the QLockTwo (http://qlocktwo.com/), this displays the
 current time using words when MagicMirror is idle.  It works similar
 to a screensaver.  After a timeout your configure, all of your modules are hidden, and the clock is displayed full screen.  Then, when motion is detected, it hides and once again shows all your regular modules.
 
-![Screen Shot](/../screenshots/MMM-MyWordClock.png?raw=true "Screen Shot")
+![Screen Shot](/../screenshots/MMM-MyWordClock_hero.jpg?raw=true "Screen Shot")
 
 It requires the use of paviro's MMM-PIR-Sensor module to detect motion and
 cancel the clock display. https://github.com/paviro/MMM-PIR-Sensor
