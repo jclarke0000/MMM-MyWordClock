@@ -91,3 +91,9 @@
   top: -0.648vh; /* Baselines don't match. this shifts the text up a few pixels */
 }
 
+/* NL_9x16 */
+.MMM-MyWordClock .clock-grid.NL_9x16.tall {
+  line-height: 13.5vh;
+}
+
+

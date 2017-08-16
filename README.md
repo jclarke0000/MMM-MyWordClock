@@ -66,7 +66,7 @@ it a header.  See below for an example config entry.
     </tr>
     <tr>
       <td><code>layout</code></td>
-      <td>which clock layout to use.  Currently <code>EN_9x16</code> and <code>EN_16x9</code> are supported, but more layouts in multiple langauges are coming.<br><br><strong>Type</strong> <code>String</code><br>Defaults to <code>EN_9x16</code> (i.e.: English layout for tv screen in vertical orientation)</td>
+      <td>which clock layout to use.  See below for available layouts.<br><br><strong>Type</strong> <code>String</code><br>Defaults to <code>EN_9x16</code> (i.e.: English layout for tv screen in vertical orientation)</td>
     </tr>
   </tbody>
 </table>
@@ -84,3 +84,17 @@ it a header.  See below for an example config entry.
   }
 }
 ```
+
+## Layouts
+
+`EN_9x16` English layout for HDTV in tall orientation (default layout)<br>
+![EN_9x16](/../screenshots/EN_9x16.jpg?raw=true "EN_9x16")
+
+`EN_16x9` English layout for HDTV in normal wide orientation<br>
+![EN_16x9](/../screenshots/EN_16x9.jpg?raw=true "EN_16x9")
+
+`NL_9x16` Dutch layout for HDTV in tall orientation<br>
+![NL_9x16](/../screenshots/NL_9x16.jpg?raw=true "NL_9x16")
+
+`NL_16x9` Dutch layout for HDTV in normal wide orientation<br>
+![NL_16x9](/../screenshots/NL_16x9.jpg?raw=true "NL_16x9")
