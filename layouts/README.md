@@ -6,6 +6,7 @@ Adding new layouts is fairly easy.  A layout in it's basic form is made up as fo
 var layout = {
   name: "layoutName",
   classes: "class1 class2",
+  nextHourAt: 35,
   config: [
     // lines -- see below
   ]
@@ -15,6 +16,11 @@ var layout = {
 What you specify for `name` is not really that important, as it's not currently used for anything.
 So it's really just for identification purposes at the moment.  Typically this would match the
 name of the layout one would specify in the module config.
+
+`nextHourAt` is the 5-minute segment after which the clock tells time relative to the next hour.
+For example, at half past the hour, the English layout says "It's half past six." At 6:35, however,
+we say "It's twenty-five minutes to seven.""  So we would specify `35`. But in other languages one
+might say "It's half seven," in which case we would specify `30`.
 
 For `classes` here is where you would specify any CSS classes that you want to use.  The layout
 name will automatically be added as a class name.  There are a couple of default classes that make

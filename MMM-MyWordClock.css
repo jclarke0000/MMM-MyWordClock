@@ -29,6 +29,7 @@
   height: 100vh;
   padding: 0;
   margin: 0;
+  color: #666;  
 }
 
 .MMM-MyWordClock .highlighted {
@@ -72,7 +73,6 @@
   font-size: 6.771vh; /* 130px / 1920 * 100 */
   line-height: 12vh;
   font-weight: normal;
-  color: #666;
 }
 
 .MMM-MyWordClock .clock-grid.tall .highlighted {

@@ -115,7 +115,7 @@ Module.register("MMM-MyWordClock", {
   getDom: function() {
 
     var theTime = moment();
-    if (theTime.minutes() >= 35 ) {
+    if (theTime.minutes() >= layout.nextHourAt ) {
       theTime.add(1, "hours");
     }
 

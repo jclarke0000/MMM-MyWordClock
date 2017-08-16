@@ -1,6 +1,7 @@
 var layout = {
   name: "EN_9x16",
   classes: "tall",
+  nextHourAt: 35,
   config : [
     [
       {
