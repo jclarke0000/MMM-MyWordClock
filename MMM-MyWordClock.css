@@ -10,8 +10,8 @@
 /* Type face for highlighted words */
 @font-face {
     font-family: 'Lobster';
-    src: url('fonts/lobster_1.3-webfont.woff2') format('woff2'),
-         url('fonts/obster_1.3-webfont.woff') format('woff');
+    src: url('fonts/lobster-regular-webfont.woff2') format('woff2'),
+         url('fonts/lobster-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
