@@ -119,7 +119,7 @@ Module.register("MMM-MyWordClock", {
       theTime.add(1, "hours");
     }
 
-    var hourVal = theTime.hour();
+    var hourVal = theTime.hours();
     var minuteVal = Math.floor(theTime.minutes()/5) * 5; //round down to the nearest 5
 
     // For every in 5-minute value, we change the colour of highlighted text
@@ -135,13 +135,34 @@ Module.register("MMM-MyWordClock", {
       var div = document.createElement("div");
       wordGroup.forEach(function(word) {
         var span = document.createElement("span");
-        span.innerHTML = word.word;
+
+        var spanContent = word.word;
 
         if (word.minutes && word.minutes.indexOf(minuteVal) != -1) {
           span.classList.add("highlighted");
         } else if (word.hours && word.hours.indexOf(hourVal) != -1) {
           span.classList.add("highlighted");
         }
+
+        //test for variations
+        if (word.variations) {
+          word.variations.forEach(function(variation) {
+
+            // Variations must specify combinations of hours
+            // AND minutes for it to be used
+            if (variation.hours &&
+              variation.minutes &&
+              variation.hours.indexOf(hourVal) != -1 &&
+              variation.minutes.indexOf(minuteVal) != -1 ) {
+
+              spanContent = variation.word;
+            }
+
+
+          });
+        }
+
+        span.innerHTML = spanContent;
 
         div.appendChild(span);
       });

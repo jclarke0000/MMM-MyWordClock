@@ -66,7 +66,7 @@ it a header.  See below for an example config entry.
     </tr>
     <tr>
       <td><code>layout</code></td>
-      <td>which clock layout to use.  See below for available layouts.<br><br><strong>Type</strong> <code>String</code><br>Defaults to <code>EN_9x16</code> (i.e.: English layout for tv screen in vertical orientation)</td>
+      <td>which clock layout to use.  See below for available layouts.<br><br><strong>Type</strong> <code>String</code><br>Defaults to <code>EN_9x16</code> (i.e.: English layout for HDTV screen in vertical orientation)</td>
     </tr>
   </tbody>
 </table>
@@ -92,6 +92,18 @@ it a header.  See below for an example config entry.
 
 `EN_16x9` English layout for HDTV in normal wide orientation<br>
 ![EN_16x9](/../screenshots/EN_16x9.jpg?raw=true "EN_16x9")
+
+`FR_9x16` French layout for HDTV in tall orientation<br>
+![FR_9x16](/../screenshots/FR_9x16.jpg?raw=true "FR_9x16")
+
+`FR_16x9` French layout for HDTV in normal wide orientation<br>
+![FR_16x9](/../screenshots/FR_16x9.jpg?raw=true "FR_16x9")
+
+`DE_9x16` German layout for HDTV in tall orientation<br>
+![DE_9x16](/../screenshots/DE_9x16.jpg?raw=true "DE_9x16")
+
+`DE_16x9` German layout for HDTV in normal wide orientation<br>
+![DE_16x9](/../screenshots/DE_16x9.jpg?raw=true "DE_16x9")
 
 `NL_9x16` Dutch layout for HDTV in tall orientation<br>
 ![NL_9x16](/../screenshots/NL_9x16.jpg?raw=true "NL_9x16")

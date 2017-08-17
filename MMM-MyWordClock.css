@@ -29,13 +29,11 @@
   height: 100vh;
   padding: 0;
   margin: 0;
-  color: #666;  
+  color: #666;
 }
 
 .MMM-MyWordClock .highlighted {
   font-family: 'Lobster';
-  display: inline-block;
-  position: relative;  
 }
 
 .MMM-MyWordClock .clock-grid.c1 .highlighted {
@@ -62,6 +60,11 @@
   margin: 0;
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+}
+
+.MMM-MyWordClock .clock-grid div span {
+  white-space: nowrap;
 }
 
 /***************************
@@ -70,14 +73,13 @@
 
 /* Default styling for tall 9x16 layout */
 .MMM-MyWordClock .clock-grid.tall {  
-  font-size: 6.771vh; /* 130px / 1920 * 100 */
+  font-size: 6.771vh;  /* 130px / 1920 * 100 */
   line-height: 12vh;
   font-weight: normal;
 }
 
 .MMM-MyWordClock .clock-grid.tall .highlighted {
-  font-size: 7.186vh; /* 138px / 1920 * 100 */
-  top: -0.208vh;  /* Baselines don't match. this shifts the text up a few pixels */
+  font-size: 7.083vh; /* 136px / 1920 * 100 */
 }
 
 /* Default styling for wide 16x9 layout */
@@ -87,13 +89,46 @@
 }
 
 .MMM-MyWordClock .clock-grid.wide .highlighted {
-  font-size: 13.889vh;  /* 150px / 1080 * 100 */
-  top: -0.648vh; /* Baselines don't match. this shifts the text up a few pixels */
+  font-size: 13.519vh;  /* 146px / 1080 * 100 */
 }
 
 /* NL_9x16 */
 .MMM-MyWordClock .clock-grid.NL_9x16.tall {
   line-height: 13.5vh;
+}
+
+/* FR_9x16 */
+.MMM-MyWordClock .clock-grid.FR_9x16.tall {  
+  line-height: 10.6vh;
+  font-size: 6.25vh;
+}
+
+.MMM-MyWordClock .clock-grid.FR_9x16.tall .highlighted {
+  font-size: 6.458vh;
+}
+
+/* FR_16x9 */
+.MMM-MyWordClock .clock-grid.FR_16x9.wide {  
+  line-height: 16vh;
+  font-size: 12.037vh;
+}
+
+.MMM-MyWordClock .clock-grid.FR_16x9.wide .highlighted {  
+  font-size: 12.593vh;
+}
+
+/* DE_9x16 */
+.MMM-MyWordClock .clock-grid.DE_9x16.tall {  
+  line-height: 13.5vh;
+  font-size: 6.25vh;
+}
+
+.MMM-MyWordClock .clock-grid.DE_9x16.tall div {
+  padding: 0 6.481vw;
+}
+
+.MMM-MyWordClock .clock-grid.DE_9x16.tall .highlighted {  
+  font-size: 6.458vh;
 }
 
 

@@ -1,4 +1,4 @@
-#Adding new layouts
+# Adding new layouts
 
 Adding new layouts is fairly easy.  A layout in it's basic form is made up as follows:
 
@@ -58,14 +58,32 @@ highlighted.
 ```
 
 In the next example, we'll configure the word `eleven` to be highlighted during hours `11` and `23`
-(just in case the user's locale natively works in 24 hour time).  This time we'll use the `hours`
-array:
+(the clock works in 24 hour time -- useful if you want to indicate AM, PM, in the afternoon, etc.).
+This time we'll use the `hours` array:
 ```
 {
   word: "eleven",
   hours: [11,23]
 }
 ```
+
+optionally, you can specify an array of variations for the word for when it is highlighted. For
+example, in German we say "Es ist ein Uhr" at 1:00, but "Es ist fünf nacht eins" at 1:05 (notice the "s" on the end of "eins"?).  It would look like so:
+```
+{
+  word: "eins",
+  hours: [1,13],
+  variations: [
+    {
+      word: "ein",
+      hours: [1,13],
+      minutes: [0]
+    }
+  ]
+}
+```
+Both the hour and minutes must match the current time slot for the variation to be displayed.  In the above example, for the variation "ein" to be displayed, it must be minute 0 AND EITHER hour 1 OR 13.
+
 
 One array of `word` objects make up one line in the grid.  For example, the tall English grid looks
 like this:
@@ -109,7 +127,7 @@ like this:
 Take a look at `EN_9x16.js` for the fully defined tall layout in English
 
 
-##Styling
+## Styling
 
 It's common to create styles in pixel sizes, but since we'll be dealing unknown actual dimensions, we
 can assume a few aspect ratios and create scalable layouts for those specific aspect ratios.  This
@@ -188,7 +206,7 @@ padding to the left and right edges of your grid, you can write CSS like so:
 }
 ```
 
-##HTML Markup
+## HTML Markup
 
 To aid in your styling, the HTML markup of the module looks like this.  Use it as a reference
 
