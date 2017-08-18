@@ -110,3 +110,6 @@ it a header.  See below for an example config entry.
 
 `NL_16x9` Dutch layout for HDTV in normal wide orientation<br>
 ![NL_16x9](/../screenshots/NL_16x9.jpg?raw=true "NL_16x9")
+
+`DE_CH_16x9` German layout for HDTV in normal wide orientation<br>
+![DE_CH_16x9](/../screenshots/DE_CH_16x9.jpg?raw=true "DE_CH_16x9")
