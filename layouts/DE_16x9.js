@@ -1,7 +1,7 @@
 var layout = {
   name: "DE_16x9",
   classes: "wide",
-  nextHourAt: 25,
+  nextHourAt: 20,
   config : [
     [
       {
@@ -9,7 +9,7 @@ var layout = {
         minutes: [0,5,10,15,20,25,30,35,40,45,50,55]
       },
       {
-        word: "viertel",
+        word: "Viertel",
         minutes: [15,45] 
       },
       {
@@ -18,28 +18,22 @@ var layout = {
       },
       {
         word: "zehn",
-        minutes: [10,40,50] 
+        minutes: [10,20,40,50] 
       },
     ],
     [
       {
-        word: "zwanzig",
-        minutes: [20] 
-      },
-      {
         word: "vor",
-        minutes: [25,45,50,55] 
+        minutes: [20,25,45,50,55] 
       },
       {
         word: "nach",
-        minutes: [5,10,15,20,35,40] 
+        minutes: [5,10,15,35,40] 
       },
       {
         word: "halb",
-        minutes: [25,30,35,40] 
-      }
-    ],
-    [
+        minutes: [20,25,30,35,40] 
+      },
       {
         word: "eins",
         hours: [1,13],
@@ -51,6 +45,8 @@ var layout = {
           }
         ] 
       },
+    ],
+    [
       {
         word: "zwei",
         hours: [2,14] 
@@ -60,44 +56,44 @@ var layout = {
         hours: [3,15] 
       },
       {
-        word: "sieben",
-        hours: [7,19] 
-      }
-    ],
-    [
-      {
-        word: "sechs",
-        hours: [6,18] 
-      },
-      {
-        word: "neun",
-        hours: [9,21] 
+        word: "vier",
+        hours: [4,16] 
       },
       {
         word: "fünf",
         hours: [5,17] 
       },
-      {
-        word: "zwölf",
-        hours: [0,12] 
-      },
     ],
     [
       {
-        word: "vier",
-        hours: [4,16] 
+        word: "sieben",
+        hours: [7,19] 
       },
       {
-        word: "zehn",
-        hours: [10,22] 
+        word: "sechs",
+        hours: [6,18] 
+      },
+      {
+        word: "acht",
+        hours: [8,20]
       },
       {
         word: "elf",
         hours: [11,23] 
       },
+    ],
+    [
       {
-        word: "acht",
-        hours: [8,20]
+        word: "neun",
+        hours: [9,21] 
+      },
+      {
+        word: "zwölf",
+        hours: [0,12] 
+      },
+      {
+        word: "zehn",
+        hours: [10,22] 
       },
       {
         word: "Uhr",
