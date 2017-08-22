@@ -18,25 +18,25 @@ var layout_DE_CH = {
       },
       {
         word: "zä",
-        minutes: [10,40,50]
+        minutes: [10,50]
       }
     ],
     [
       {
-        word: "zwanzg",
-        minutes: [20]
+        word: "zwänzg",
+        minutes: [20,40]
       },
       {
         word: "vor",
-        minutes: [25,45,50,55]
+        minutes: [25,40,45,50,55]
       },
       {
         word: "ab",
-        minutes: [5,10,15,20,35,40]
+        minutes: [5,10,15,20,35]
       },
       {
         word: "halbi",
-        minutes: [25,30,35,40]
+        minutes: [25,30,35]
       }
     ],
     [

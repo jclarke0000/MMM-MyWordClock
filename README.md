@@ -98,6 +98,7 @@ it a header.  See below for an example config entry.
 The following languages are currently supported:
 
 * `EN` English (default)
+* `DA` Danish
 * `DE` German
 * `DE_CH` Swiss German
 * `FR` French
@@ -105,7 +106,6 @@ The following languages are currently supported:
 
 Coming soon:
 
-* `DA` Danish
 * `ZH` Chinese Simplified
 * `JA` Japanese
 * `KO` Korean

@@ -40,7 +40,7 @@ Module.register("MMM-MyWordClock", {
   layouts: {},
 
 
-  languages: ["EN","DE","DE_CH","FR","NL"],
+  languages: ["EN","DA","DE","DE_CH","FR","NL"],
 
   getRandomInt: function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -50,9 +50,15 @@ Module.register("MMM-MyWordClock", {
     console.log("Starting module: " + this.name);
     var self = this;
 
-    //load all language layouts into an array
-    for (var i = 0; i < this.languages.length; i++) {
-      this.layouts[this.languages[i]] = eval("layout_" + this.languages[i]);
+    var cLang = this.config.langauge;
+    if (cLang == "*") {
+      //load all language layouts into an array
+      for (var i = 0; i < this.languages.length; i++) {
+        this.layouts[this.languages[i]] = eval("layout_" + this.languages[i]);
+      }
+    } else {
+      //We just need one language
+      this.layouts[cLang] = eval("layout_" + cLang);
     }
 
 
@@ -78,9 +84,15 @@ Module.register("MMM-MyWordClock", {
   //imports the layout from a file of the same name
   getScripts: function() {
 
+    var cLang = this.config.langauge;
+
     var scriptsToLoad = ["moment.js"];
-    for (var i = 0; i < this.languages.length; i++) {
-      scriptsToLoad.push(this.file("layouts/" + this.languages[i] + "_" + this.config.orientation + ".js"));
+    if (cLang == "*") {
+      for (var i = 0; i < this.languages.length; i++) {
+        scriptsToLoad.push(this.file("layouts/" + this.languages[i] + "_" + this.config.orientation + ".js"));
+      }
+    } else {
+      scriptsToLoad.push(this.file("layouts/" + cLang + "_" + this.config.orientation + ".js"));
     }
 
     return scriptsToLoad;
