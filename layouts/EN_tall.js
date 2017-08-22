@@ -1,4 +1,4 @@
-var layout = {
+var layout_EN = {
   name: "EN_9x16",
   classes: "tall",
   nextHourAt: 35,

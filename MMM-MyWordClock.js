@@ -33,27 +33,57 @@ Module.register("MMM-MyWordClock", {
   defaults: {
     showClockTimeOut: 5 * 60 * 1000, //5 minutes
     animationSpeed: 1000,
-    layout: "EN_9x16"
+    langauge: "EN",
+    orientation: "tall"
+  },
+
+  layouts: {},
+
+
+  languages: ["EN","DE","DE_CH","FR","NL"],
+
+  getRandomInt: function(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   },
 
   start: function() {
     console.log("Starting module: " + this.name);
     var self = this;
 
+    //load all language layouts into an array
+    for (var i = 0; i < this.languages.length; i++) {
+      this.layouts[this.languages[i]] = eval("layout_" + this.languages[i]);
+    }
+
+
+    //set some defaults
+    this.colorCounter = 0;
+    this.languageCounter = 1;
+    this.hourSegment = Math.floor(moment().minutes() / 5) * 5;
+    this.showTimer = null;
+    this.curLanguage = this.config.langauge;
+    
+    //generate random colours and language (if configured to "*"")
+    this.updateCounters();
+
+    //start update timer
     setInterval(function() {
       self.updateDom(1000);
     }, 5 * 1000);
 
-    this.colorCounter = 1;
-    this.hourSegment = 0;
 
-    this.showTimer = null;
 
   },
 
   //imports the layout from a file of the same name
   getScripts: function() {
-    return ["moment.js", this.file("layouts/" + this.config.layout + ".js")];
+
+    var scriptsToLoad = ["moment.js"];
+    for (var i = 0; i < this.languages.length; i++) {
+      scriptsToLoad.push(this.file("layouts/" + this.languages[i] + "_" + this.config.orientation + ".js"));
+    }
+
+    return scriptsToLoad;
   },
 
   getStyles: function() {
@@ -105,31 +135,36 @@ Module.register("MMM-MyWordClock", {
 
   },
 
-  incrementColorCounter: function() {
-    this.colorCounter += 1;
-    if (this.colorCounter == 7) {
-      this.colorCounter = 1;
+  updateCounters: function() {
+    this.colorCounter = this.getRandomInt(1,6);
+
+    if (this.config.langauge == "*") {
+      this.languageCounter = this.getRandomInt(0,this.languages.length - 1);
+      this.curLanguage = this.languages[this.languageCounter];
     }
   },
 
   getDom: function() {
 
+
     var theTime = moment();
+
+    var minuteVal = Math.floor(theTime.minutes()/5) * 5; //round down to the nearest 5
+
+    // For every in 5-minute value, we change the colour of highlighted text, and language if configured
+    if (minuteVal != this.hourSegment) {
+      this.hourSegment = minuteVal;
+      this.updateCounters();
+    }
+
+    var layout = this.layouts[this.curLanguage];
     if (theTime.minutes() >= layout.nextHourAt ) {
       theTime.add(1, "hours");
     }
-
     var hourVal = theTime.hours();
-    var minuteVal = Math.floor(theTime.minutes()/5) * 5; //round down to the nearest 5
-
-    // For every in 5-minute value, we change the colour of highlighted text
-    if (minuteVal != this.hourSegment) {
-      this.hourSegment = minuteVal;
-      this.incrementColorCounter();
-    }
 
     var wrapper = document.createElement("div");
-    wrapper.classList.add("clock-grid", "c" + this.colorCounter, this.config.layout, layout.classes);
+    wrapper.classList.add("clock-grid", "c" + this.colorCounter, this.curLanguage, layout.classes);
 
     layout.config.forEach(function(wordGroup) {
       var div = document.createElement("div");

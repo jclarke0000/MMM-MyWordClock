@@ -3,7 +3,7 @@
 Adding new layouts is fairly easy.  A layout in it's basic form is made up as follows:
 
 ```
-var layout = {
+var layout_LANG = {
   name: "layoutName",
   classes: "class1 class2",
   nextHourAt: 35,
@@ -13,17 +13,21 @@ var layout = {
 };
 ```
 
+'var layout_LANG' is important.  You need to name this variable for this layout's
+language.  For example, the French layout's variable name is `layout_FR.`  This
+needs to match exactly the language parameter a user would use to configure the
+clock.
+
 What you specify for `name` is not really that important, as it's not currently used for anything.
-So it's really just for identification purposes at the moment.  Typically this would match the
-name of the layout one would specify in the module config.
+So it's really just for identification purposes at the moment. 
 
 `nextHourAt` is the 5-minute segment after which the clock tells time relative to the next hour.
 For example, at half past the hour, the English layout says "It's half past six." At 6:35, however,
 we say "It's twenty-five minutes to seven.""  So we would specify `35`. But in other languages one
 might say "It's half seven," in which case we would specify `30`.
 
-For `classes` here is where you would specify any CSS classes that you want to use.  The layout
-name will automatically be added as a class name.  There are a couple of default classes that make
+For `classes` here is where you would specify any CSS classes that you want to use.  The language
+will automatically be added as a class name.  There are a couple of default classes that make
 good starting points for your layout: `tall` and `wide`.  These are 9x16 and 16x9 layouts respectively, 
 and it will save you some work if you start with one of these.
 
@@ -149,7 +153,7 @@ Then, say, through trial and error you discovered that your optimal font-size is
 look like this:
 
 ```
-.MMM-MyWordClock .clock-grid.tall.your-custom-class {  
+.MMM-MyWordClock .clock-grid.LANG.tall.your-custom-class {  
   font-size: 130px
   line-height: 240px;
 }
@@ -176,7 +180,7 @@ use `6.771`.
 Let's replace our pixel values in the CSS with our calculated `vh` units:
 
 ```
-.MMM-MyWordClock .clock-grid.tall.your-custom-class {  
+.MMM-MyWordClock .clock-grid.LANG.tall.your-custom-class {  
   font-size: 6.771vh;
   line-height: 12.5vh;
 }
@@ -213,7 +217,7 @@ To aid in your styling, the HTML markup of the module looks like this.  Use it a
 ```
 <div class="module MMM-MyWordClock">
   <div class="module-content">
-    <div class="clock-grid EN_9x16 tall"> <!-- the layout name and any classes you specify in the layout object are applied here -->
+    <div class="clock-grid EN tall"> <!-- the language name and any classes you specify in the layout object are applied here -->
       <div> <!-- first line of text -->
         <span class="highlighted">It's</span> <!-- example of a highlighted word -->
         <span>half</span> <!-- unhighlited word -->

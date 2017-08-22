@@ -1,6 +1,6 @@
-var layout = {
-  name: "NL_16x9",
-  classes: "wide",
+var layout_NL = {
+  name: "NL_9x16",
+  classes: "tall",
   nextHourAt: 20,  
   config : [
     [
@@ -15,13 +15,13 @@ var layout = {
       {
         word: "tien",
         minutes: [10,20,40,50] 
-      },
+      }
+    ],
+    [
       {
         word: "kwart",
         minutes: [15,45] 
       },
-    ],
-    [
       {
         word: "over",
         minutes: [5,10,15,35,40] 
@@ -29,7 +29,9 @@ var layout = {
       {
         word: "voor",
         minutes: [20,25,45,50,55] 
-      },
+      }
+    ],
+    [
       {
         word: "half",
         minutes: [20,25,30,35,40] 
@@ -37,16 +39,16 @@ var layout = {
       {
         word: "een",
         hours: [1,13] 
+      },
+      {
+        word: "drie",
+        hours: [3,15] 
       }
     ],
     [
       {
         word: "twee",
         hours: [2,14] 
-      },
-      {
-        word: "drie",
-        hours: [3,15] 
       },
       {
         word: "vier",
@@ -58,19 +60,23 @@ var layout = {
       }
     ],
     [
-    ],
-    [
       {
         word: "zes",
         hours: [6,18] 
       },
       {
-        word: "zeven",
-        hours: [7,19] 
-      },
-      {
         word: "acht",
         hours: [8,20] 
+      },
+      {
+        word: "tien",
+        hours: [10,22] 
+      }
+    ],
+    [
+      {
+        word: "zeven",
+        hours: [7,19] 
       },
       {
         word: "negen",
@@ -78,10 +84,6 @@ var layout = {
       }
     ],
     [
-      {
-        word: "tien",
-        hours: [10,22] 
-      },
       {
         word: "elf",
         hours: [11,23] 

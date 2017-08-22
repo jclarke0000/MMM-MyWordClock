@@ -1,7 +1,7 @@
-var layout = {
+var layout_DE = {
   name: "DE_16x9",
   classes: "wide",
-  nextHourAt: 20,
+  nextHourAt: 25,
   config : [
     [
       {
@@ -18,22 +18,28 @@ var layout = {
       },
       {
         word: "zehn",
-        minutes: [10,20,40,50] 
+        minutes: [10,50] 
       },
     ],
     [
       {
+        word: "zwanzig",
+        minutes: [20,40] 
+      },    
+      {
         word: "vor",
-        minutes: [20,25,45,50,55] 
+        minutes: [25,40,45,50,55] 
       },
       {
         word: "nach",
-        minutes: [5,10,15,35,40] 
+        minutes: [5,10,15,20,35] 
       },
       {
         word: "halb",
-        minutes: [20,25,30,35,40] 
-      },
+        minutes: [25,30,35] 
+      }
+    ],
+    [
       {
         word: "eins",
         hours: [1,13],
@@ -45,8 +51,6 @@ var layout = {
           }
         ] 
       },
-    ],
-    [
       {
         word: "zwei",
         hours: [2,14] 

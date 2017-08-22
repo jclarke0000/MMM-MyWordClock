@@ -1,4 +1,4 @@
-var layout = {
+var layout_EN = {
   name: "EN_16x9",
   classes: "wide",
   nextHourAt: 35,  
@@ -9,20 +9,6 @@ var layout = {
         minutes: [0,5,10,15,20,25,30,35,40,45,50,55,60]
       },
       {
-        word: "half",
-        minutes: [30] 
-      },
-      {
-        word: "ten",
-        minutes: [10,50] 
-      },
-      {
-        word: "quarter",
-        minutes: [15,45] 
-      }
-    ],
-    [
-      {
         word: "twenty",
         minutes: [20,25,35,40] 
       },
@@ -31,18 +17,32 @@ var layout = {
         minutes: [5,25,35,55] 
       },
       {
-        word: "minutes",
-        minutes: [5,10,20,25,35,40,50,55] 
-      },
-      {
-        word: "to",
-        minutes: [35,40,45,50,55] 
+        word: "quarter",
+        minutes: [15,45] 
       }
     ],
     [
       {
+        word: "half",
+        minutes: [30] 
+      },
+      {
+        word: "ten",
+        minutes: [10,50] 
+      },
+      {
+        word: "minutes",
+        minutes: [5,10,20,25,35,40,50,55] 
+      },
+      {
         word: "past",
         minutes: [5,10,15,20,25,30] 
+      }
+    ],
+    [
+      {
+        word: "to",
+        minutes: [35,40,45,50,55] 
       },
       {
         word: "two",
@@ -53,8 +53,8 @@ var layout = {
         hours: [3,15] 
       },
       {
-        word: "one",
-        hours: [1,13] 
+        word: "seven",
+        hours: [7,19] 
       },
       {
         word: "four",
@@ -71,8 +71,8 @@ var layout = {
         hours: [6,18] 
       },
       {
-        word: "seven",
-        hours: [7,19] 
+        word: "one",
+        hours: [1,13] 
       },
       {
         word: "eight",

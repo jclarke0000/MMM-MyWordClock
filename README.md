@@ -6,7 +6,7 @@ https://github.com/MichMich/MagicMirror
 
 Inspired by the QLockTwo (http://qlocktwo.com/), this displays the
 current time using words when MagicMirror is idle.  It works similar
-to a screensaver.  After a timeout your configure, all of your modules are hidden, and the clock is displayed full screen.  Then, when motion is detected, it hides and once again shows all your regular modules.
+to a screensaver.  After a timeout you configure, all of your modules are hidden, and the clock is displayed full screen.  Then, when motion is detected, it hides and once again shows all your regular modules.
 
 ![Screen Shot](/../screenshots/MMM-MyWordClock_hero.jpg?raw=true "Screen Shot")
 
@@ -65,8 +65,12 @@ it a header.  See below for an example config entry.
       <td>How fast, in milliseconds, the hide/show fade animation executes.<br><br><strong>Type</strong> <code>Number</code><br>Defaults to <code>1000</code> (i.e.: 1 second)</td>
     </tr>
     <tr>
-      <td><code>layout</code></td>
-      <td>which clock layout to use.  See below for available layouts.<br><br><strong>Type</strong> <code>String</code><br>Defaults to <code>EN_9x16</code> (i.e.: English layout for HDTV screen in vertical orientation)</td>
+      <td><code>language</code></td>
+      <td>The display language. Specify `*` to have the clock pick a langauge at random each time it updates.<br><br><strong>Type</strong> <code>String</code><br>Defaults to <code>EN</code> (English).<br>See below for the list of supported languages.</td>
+    </tr>
+    <tr>
+      <td><code>orientation</code></td>
+      <td>Your screen orientation, e.g.: <code>tall</code> or <code>wide</code>.<br><br><strong>Type</strong> <code>String</code><br>Defaults to <code>tall</code> (English).</td>
     </tr>
   </tbody>
 </table>
@@ -77,36 +81,32 @@ it a header.  See below for an example config entry.
 {
   module: "MMM-MyWordClock",
   position: "fullscreen_above", //this is important!
-  disabled: true,
   config: {
     showClockTimeOut: 5 * 60 * 1000, //5 minutes
-    layout: "EN_9x16"
+    language: "EN",
+    orientation: "tall"
   }
 }
 ```
 
-## Layouts
+## Languages
 
-`EN_9x16` English layout for HDTV in tall orientation (default layout)<br>
-![EN_9x16](/../screenshots/EN_9x16.jpg?raw=true "EN_9x16")
+The following languages are currently supported:
 
-`EN_16x9` English layout for HDTV in normal wide orientation<br>
-![EN_16x9](/../screenshots/EN_16x9.jpg?raw=true "EN_16x9")
+* `EN` English (default)
+* `DE` German
+* `DE_CH` Swiss German
+* `FR` French
+* `NL` Dutch
 
-`FR_9x16` French layout for HDTV in tall orientation<br>
-![FR_9x16](/../screenshots/FR_9x16.jpg?raw=true "FR_9x16")
+Coming soon:
 
-`FR_16x9` French layout for HDTV in normal wide orientation<br>
-![FR_16x9](/../screenshots/FR_16x9.jpg?raw=true "FR_16x9")
+* `DA` Danish
+* `ZH` Chinese Simplified
+* `JA` Japanese
+* `KO` Korean
+* `TL` Tagalog (Philipino)
 
-`DE_9x16` German layout for HDTV in tall orientation<br>
-![DE_9x16](/../screenshots/DE_9x16.jpg?raw=true "DE_9x16")
+Many thanks to pjkoeleman, clubbi, willfri, strawberry 3.141, Sean, kruemel, Lange and Atteraxol
+for help with translations.
 
-`DE_16x9` German layout for HDTV in normal wide orientation<br>
-![DE_16x9](/../screenshots/DE_16x9.jpg?raw=true "DE_16x9")
-
-`NL_9x16` Dutch layout for HDTV in tall orientation<br>
-![NL_9x16](/../screenshots/NL_9x16.jpg?raw=true "NL_9x16")
-
-`NL_16x9` Dutch layout for HDTV in normal wide orientation<br>
-![NL_16x9](/../screenshots/NL_16x9.jpg?raw=true "NL_16x9")

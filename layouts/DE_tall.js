@@ -1,7 +1,7 @@
-var layout = {
+var layout_DE = {
   name: "DE_9x16",
   classes: "tall",
-  nextHourAt: 20,
+  nextHourAt: 25,
   config : [
     [
       {
@@ -9,32 +9,36 @@ var layout = {
         minutes: [0,5,10,15,20,25,30,35,40,45,50,55]
       },
       {
-        word: "fünf",
-        minutes: [5,25,35,55] 
-      },
-      {
-        word: "zehn",
-        minutes: [10,20,40,50] 
-      }
-    ],
-    [
-      {
         word: "Viertel",
         minutes: [15,45] 
       },
       {
-        word: "nach",
-        minutes: [5,10,15,35,40] 
+        word: "zehn",
+        minutes: [10,50] 
+      },
+    ],
+    [
+      {
+        word: "fünf",
+        minutes: [5,25,35,55] 
+      },
+      {
+        word: "zwanzig",
+        minutes: [20,40] 
       },
       {
         word: "vor",
-        minutes: [20,25,45,50,55] 
+        minutes: [25,45,40,50,55] 
       }
     ],
     [
       {
+        word: "nach",
+        minutes: [5,10,20,15,35] 
+      },
+      {
         word: "halb",
-        minutes: [20,25,30,35,40] 
+        minutes: [25,30,35] 
       },
       {
         word: "eins",
@@ -46,17 +50,23 @@ var layout = {
             minutes: [0]            
           }
         ] 
-      },
-      {
-        word: "zwei",
-        hours: [2,14] 
       }
     ],
     [
       {
+        word: "zwei",
+        hours: [2,14] 
+      },
+      {
         word: "drei",
         hours: [3,15] 
       },
+      {
+        word: "sechs",
+        hours: [6,18] 
+      }
+    ],
+    [
       {
         word: "vier",
         hours: [4,16] 
@@ -64,22 +74,16 @@ var layout = {
       {
         word: "fünf",
         hours: [5,17] 
-      }
-    ],
-    [
-      {
-        word: "sechs",
-        hours: [6,18] 
       },
       {
         word: "sieben",
         hours: [7,19] 
-      },
+      }
     ],
     [
       {
-        word: "acht",
-        hours: [8,20]
+        word: "elf",
+        hours: [11,23] 
       },
       {
         word: "neun",
@@ -92,8 +96,8 @@ var layout = {
     ],
     [
       {
-        word: "elf",
-        hours: [11,23] 
+        word: "acht",
+        hours: [8,20]
       },
       {
         word: "zwölf",
