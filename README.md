@@ -44,9 +44,13 @@ Navigate into your MagicMirror `modules` folder and execute<br>
 
 ## Configuration
 
-*NOTE* for this module to work correctly, you need to place it in 
+*NOTE* Configuration for this module has changed with the most recent update.  If you
+are updating, besure to read below.
+
+For this module to work correctly, you need to place it in 
 `position: "fullscreen_above"` in your config.js.  Also, don't give
 it a header.  See below for an example config entry.
+
 
 <table>
   <thead>
