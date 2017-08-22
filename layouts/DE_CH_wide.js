@@ -53,8 +53,8 @@ var layout_DE_CH = {
         hours: [3,15]
       },
       {
-        word: "sibni",
-        hours: [7,19]
+        word: "zwöufi",
+        hours: [0,12]
       }
     ],
     [
@@ -71,8 +71,8 @@ var layout_DE_CH = {
         hours: [5,17]
       },
       {
-        word: "zwöufi",
-        hours: [0,12]
+        word: "sibni",
+        hours: [7,19]
       }
     ],
     [
