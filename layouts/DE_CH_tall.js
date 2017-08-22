@@ -41,23 +41,23 @@ var layout_DE_CH = {
         minutes: [25,30,35,40]
       },
       {
-        word: "zwöi",
-        hours: [2,14]
+        word: "eis",
+        hours: [1,13]
       }
     ],
     [
       {
-        word: "eis",
-        hours: [1,13]
+        word: "zwöi",
+        hours: [2,14]
       },
       {
         word: "drü",
         hours: [3,15]
       },
       {
-        word: "sächsi",
-        hours: [6,18]
-      }
+        word: "eufi",
+        hours: [11,23]
+      }      
     ],
     [
       {
@@ -89,8 +89,8 @@ var layout_DE_CH = {
     ],
     [
       {
-        word: "eufi",
-        hours: [11,23]
+        word: "sächsi",
+        hours: [6,18]
       },
       {
         word: "zwöufi",
