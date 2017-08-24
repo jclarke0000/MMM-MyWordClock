@@ -43,13 +43,13 @@
 }
 @font-face {
     font-family: 'NotoSerifKR';
-    src: url('fonts/NotoSerifJP-Black.woff2') format('woff2');
+    src: url('fonts/NotoSerifKR-Black.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'NotoSerifSC';
-    src: url('fonts/NotoSerifJP-Black.woff2') format('woff2');
+    src: url('fonts/NotoSerifSC-Black.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -192,7 +192,11 @@
 }*/
 
 
-/* JA */
+/*
+  JA
+  Japanese clock reads vertically, and from right-to-left
+*/
+
 .MMM-MyWordClock .clock-grid.JA {
   font-family: "NotoSansJP";
   align-items: flex-start;
@@ -225,7 +229,7 @@
 
 .MMM-MyWordClock .clock-grid.JA.wide {
   align-items: center;
-  font-size: 90px;
+  font-size: 12.5vh;
 }
 
 .MMM-MyWordClock .clock-grid.JA.wide > div {
@@ -234,7 +238,7 @@
 }
 
 .MMM-MyWordClock .clock-grid.JA.wide .highlighted {
-  font-size: 90px;
+  font-size: 12.5vh;
 }
 
 /* KO */
@@ -242,9 +246,16 @@
   font-family: "NotoSansKR";
 }
 
-
 .MMM-MyWordClock .clock-grid.KO .highlighted {
   font-family: 'NotoSerifKR';
+}
+
+.MMM-MyWordClock .clock-grid.KO.tall {
+  line-height: 14vh;
+}
+
+.MMM-MyWordClock .clock-grid.KO.wide {
+  line-height: 23vh;
 }
 
 /* ZH */

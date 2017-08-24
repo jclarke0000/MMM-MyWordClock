@@ -103,12 +103,12 @@ The following languages are currently supported:
 * `DE_CH` Swiss German
 * `FR` French
 * `JA` Japanese
+* `KO` Korean
 * `NL` Dutch
 
 Coming soon:
 
 * `ZH` Chinese Simplified
-* `KO` Korean
 * `TL` Tagalog (Philipino)
 
 Many thanks to pjkoeleman, clubbi, willfri, strawberry 3.141, Sean, kruemel, Lange and Atteraxol
