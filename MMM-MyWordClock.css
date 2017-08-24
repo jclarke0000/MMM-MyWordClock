@@ -181,17 +181,6 @@
 
 /* ============== CJK ================ */
 
-/*.MMM-MyWordClock .clock-grid.JA,
-.MMM-MyWordClock .clock-grid.ZH,
-.MMM-MyWordClock .clock-grid.KO {
-}
-
-.MMM-MyWordClock .clock-grid.JA .highlighted,
-.MMM-MyWordClock .clock-grid.ZH .highlighted,
-.MMM-MyWordClock .clock-grid.KO .highlighted {
-}*/
-
-
 /*
   JA
   Japanese clock reads vertically, and from right-to-left
@@ -213,10 +202,8 @@
   justify-content: flex-start;
   align-items: center;
   line-height: 1;
-  /*border: solid 1px #fff;*/
   flex-shrink: 1;
   flex-grow: 1;
-  /*padding: 0 4vw;*/
   padding: 0;
   margin-top: 3.333vh;
   line-height: 1.25;
@@ -269,4 +256,32 @@
 }
 
 
+.MMM-MyWordClock .clock-grid.ZH.tall > div {
+  justify-content: flex-start;
+  padding: 0;
+  padding-left: 3.333vw;
+}
+
+.MMM-MyWordClock .clock-grid.ZH.tall > div > span {
+  text-align: center;
+  width: 15.556vw;
+}
+
+.MMM-MyWordClock .clock-grid.ZH.tall {
+  line-height: 16vh;
+}
+
+.MMM-MyWordClock .clock-grid.ZH.wide {
+  line-height: 23vh;
+}
+
+.MMM-MyWordClock .clock-grid.ZH.wide > div {
+  justify-content: flex-start;
+  padding: 0;
+  padding-left: 4.297vw;
+}
+.MMM-MyWordClock .clock-grid.ZH.wide > div > span {
+  text-align: center;
+  width: 10.156vw;
+}
 

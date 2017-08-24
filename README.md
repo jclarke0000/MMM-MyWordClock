@@ -105,10 +105,10 @@ The following languages are currently supported:
 * `JA` Japanese
 * `KO` Korean
 * `NL` Dutch
+* `ZH` Simplified Chinese
 
 Coming soon:
 
-* `ZH` Chinese Simplified
 * `TL` Tagalog (Philipino)
 
 Many thanks to pjkoeleman, clubbi, willfri, strawberry 3.141, Sean, kruemel, Lange and Atteraxol
