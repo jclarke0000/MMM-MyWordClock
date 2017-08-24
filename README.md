@@ -102,12 +102,12 @@ The following languages are currently supported:
 * `DE` German
 * `DE_CH` Swiss German
 * `FR` French
+* `JA` Japanese
 * `NL` Dutch
 
 Coming soon:
 
 * `ZH` Chinese Simplified
-* `JA` Japanese
 * `KO` Korean
 * `TL` Tagalog (Philipino)
 

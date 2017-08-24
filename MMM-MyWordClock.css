@@ -16,6 +16,44 @@
     font-style: normal;
 }
 
+/* CJK web fonts */
+@font-face {
+    font-family: 'NotoSansJP';
+    src: url('fonts/NotoSansJP-Thin.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NotoSansKR';
+    src: url('fonts/NotoSansKR-Thin.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NotoSansSC';
+    src: url('fonts/NotoSansSC-Thin.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NotoSerifJP';
+    src: url('fonts/NotoSerifJP-Black.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NotoSerifKR';
+    src: url('fonts/NotoSerifJP-Black.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NotoSerifSC';
+    src: url('fonts/NotoSerifJP-Black.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Base classes */
 
 .MMM-MyWordClock .clock-grid {
@@ -141,6 +179,83 @@
   line-height: 13.5vh;
 }
 
+/* ============== CJK ================ */
+
+/*.MMM-MyWordClock .clock-grid.JA,
+.MMM-MyWordClock .clock-grid.ZH,
+.MMM-MyWordClock .clock-grid.KO {
+}
+
+.MMM-MyWordClock .clock-grid.JA .highlighted,
+.MMM-MyWordClock .clock-grid.ZH .highlighted,
+.MMM-MyWordClock .clock-grid.KO .highlighted {
+}*/
+
+
+/* JA */
+.MMM-MyWordClock .clock-grid.JA {
+  font-family: "NotoSansJP";
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 9.375vh;
+  flex-wrap: no-wrap;
+  direction: rtl;
+}
+
+.MMM-MyWordClock .clock-grid.JA > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 1;
+  /*border: solid 1px #fff;*/
+  flex-shrink: 1;
+  flex-grow: 1;
+  /*padding: 0 4vw;*/
+  padding: 0;
+  margin-top: 3.333vh;
+  line-height: 1.25;
+}
+
+.MMM-MyWordClock .clock-grid.JA .highlighted {
+  font-family: 'NotoSerifJP';
+  font-size: 9.375vh;
+}
+
+.MMM-MyWordClock .clock-grid.JA.wide {
+  align-items: center;
+  font-size: 90px;
+}
+
+.MMM-MyWordClock .clock-grid.JA.wide > div {
+  margin-top: 0;
+  line-height: 16vh;
+}
+
+.MMM-MyWordClock .clock-grid.JA.wide .highlighted {
+  font-size: 90px;
+}
+
+/* KO */
+.MMM-MyWordClock .clock-grid.KO {
+  font-family: "NotoSansKR";
+}
+
+
+.MMM-MyWordClock .clock-grid.KO .highlighted {
+  font-family: 'NotoSerifKR';
+}
+
+/* ZH */
+.MMM-MyWordClock .clock-grid.ZH {
+  font-family: "NotoSansSC";
+}
+
+
+.MMM-MyWordClock .clock-grid.ZH .highlighted {
+  font-family: 'NotoSerifSC';
+}
 
 
 

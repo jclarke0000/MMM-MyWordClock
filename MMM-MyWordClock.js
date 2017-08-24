@@ -40,7 +40,7 @@ Module.register("MMM-MyWordClock", {
   layouts: {},
 
 
-  languages: ["EN","DA","DE","DE_CH","FR","NL"],
+  languages: ["EN","DA","DE","DE_CH","FR","JA","NL"],
 
   getRandomInt: function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
