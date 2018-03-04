@@ -120,7 +120,7 @@ var layout_FR = {
       },
       {
         word: "de",
-        hours: [13,14,15,16,17] 
+        hours: [13,14,15,16] 
       },
       {
         word: "matin",
@@ -130,7 +130,7 @@ var layout_FR = {
     [
       {
         word: "soir",
-        hours: [18,19,20,21,22,23] 
+        hours: [17,18,19,20,21,22,23] 
       },
       {
         word: "l’après-midi",

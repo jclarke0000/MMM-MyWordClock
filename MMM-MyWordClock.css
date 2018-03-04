@@ -24,6 +24,19 @@
     font-style: normal;
 }
 @font-face {
+    font-family: 'NotoSansJP';
+    src: url('fonts/NotoSansJP-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NotoSansJP';
+    src: url('fonts/NotoSansJP-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'NotoSansKR';
     src: url('fonts/NotoSansKR-Thin.woff2') format('woff2');
     font-weight: normal;
@@ -76,21 +89,57 @@
 
 .MMM-MyWordClock .clock-grid.c1 .highlighted {
   color: #ff077c;
+  text-shadow:
+    3px   3px  0 #fffc00,
+   -1px  -1px  0 #fffc00,  
+    1px   -1px 0 #fffc00,
+   -1px  1px   0 #fffc00,
+    1px   1px  0 #fffc00;  
 }
 .MMM-MyWordClock .clock-grid.c2 .highlighted {
-  color: #99ff07;
+  color: #d8ff00;
+  text-shadow:
+    3px   3px  0 #0f8bff,
+   -1px  -1px  0 #0f8bff,  
+    1px   -1px 0 #0f8bff,
+   -1px  1px   0 #0f8bff,
+    1px   1px  0 #0f8bff;  
 }
 .MMM-MyWordClock .clock-grid.c3 .highlighted {
-  color: #ffd200;
+  color: #ffea00;
+  text-shadow:
+    3px   3px  0 #ff0600,
+   -1px  -1px  0 #ff0600,  
+    1px   -1px 0 #ff0600,
+   -1px  1px   0 #ff0600,
+    1px   1px  0 #ff0600;  
 }
 .MMM-MyWordClock .clock-grid.c4 .highlighted {
-  color: #01ccff;
+  color: #01f6ff;
+  text-shadow:
+    3px   3px  0 #ff23dd,
+   -1px  -1px  0 #ff23dd,  
+    1px   -1px 0 #ff23dd,
+   -1px  1px   0 #ff23dd,
+    1px   1px  0 #ff23dd;  
 }
 .MMM-MyWordClock .clock-grid.c5 .highlighted {
   color: #ff012b;
+  text-shadow:
+    3px   3px  0 #6af6ff,
+   -1px  -1px  0 #6af6ff,  
+    1px   -1px 0 #6af6ff,
+   -1px  1px   0 #6af6ff,
+    1px   1px  0 #6af6ff;  
 }
 .MMM-MyWordClock .clock-grid.c6 .highlighted {
-  color: #f0ff00;
+  color: #ae00ff;
+  text-shadow:
+    3px   3px  0 #ffea00,
+   -1px  -1px  0 #ffea00,  
+    1px   -1px 0 #ffea00,
+   -1px  1px   0 #ffea00,
+    1px   1px  0 #ffea00;  
 }
 
 .MMM-MyWordClock .clock-grid div {
@@ -210,7 +259,8 @@
 }
 
 .MMM-MyWordClock .clock-grid.JA .highlighted {
-  font-family: 'NotoSerifJP';
+  font-family: 'NotoSansJP';
+  font-weight: 700;
   font-size: 9.375vh;
 }
 

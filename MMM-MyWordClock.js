@@ -17,7 +17,7 @@
    - My English layout is slightly different, in that the clock reads:
      "It's half past one" instead of "It's half two"
    - Adding other layouts is fairly trivial, and adding multiple
-     layouts for any given langauge is possible (e.g.: An English langauge
+     layouts for any given language is possible (e.g.: An English language
      version for tall HDTV resolution, another for HDTV wide, a third for German tall HDTV, etc).
    - Layouts are not restricted to the same amount of lines or even the same
      amount of words per line as the english version.  This means that
@@ -33,7 +33,7 @@ Module.register("MMM-MyWordClock", {
   defaults: {
     showClockTimeOut: 5 * 60 * 1000, //5 minutes
     animationSpeed: 1000,
-    langauge: "EN",
+    language: "EN",
     orientation: "tall"
   },
 
@@ -50,7 +50,7 @@ Module.register("MMM-MyWordClock", {
     console.log("Starting module: " + this.name);
     var self = this;
 
-    var cLang = this.config.langauge;
+    var cLang = this.config.language;
     if (cLang == "*") {
       //load all language layouts into an array
       for (var i = 0; i < this.languages.length; i++) {
@@ -67,7 +67,7 @@ Module.register("MMM-MyWordClock", {
     this.languageCounter = 1;
     this.hourSegment = Math.floor(moment().minutes() / 5) * 5;
     this.showTimer = null;
-    this.curLanguage = this.config.langauge;
+    this.curLanguage = this.config.language;
     
     //generate random colours and language (if configured to "*"")
     this.updateCounters();
@@ -84,7 +84,7 @@ Module.register("MMM-MyWordClock", {
   //imports the layout from a file of the same name
   getScripts: function() {
 
-    var cLang = this.config.langauge;
+    var cLang = this.config.language;
 
     var scriptsToLoad = ["moment.js"];
     if (cLang == "*") {
@@ -150,7 +150,7 @@ Module.register("MMM-MyWordClock", {
   updateCounters: function() {
     this.colorCounter = this.getRandomInt(1,6);
 
-    if (this.config.langauge == "*") {
+    if (this.config.language == "*") {
       this.languageCounter = this.getRandomInt(0,this.languages.length - 1);
       this.curLanguage = this.languages[this.languageCounter];
     }
