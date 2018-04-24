@@ -34,7 +34,8 @@ Module.register("MMM-MyWordClock", {
     showClockTimeOut: 5 * 60 * 1000, //5 minutes
     animationSpeed: 1000,
     language: "EN",
-    orientation: "tall"
+    orientation: "tall",
+    everyMinute: false
   },
 
   layouts: {},
@@ -66,6 +67,9 @@ Module.register("MMM-MyWordClock", {
     this.colorCounter = 0;
     this.languageCounter = 1;
     this.hourSegment = Math.floor(moment().minutes() / 5) * 5;
+    if (this.config.everyMinute) {
+      this.hourSegment = moment().minutes();
+    }
     this.showTimer = null;
     this.curLanguage = this.config.language;
     
@@ -75,7 +79,7 @@ Module.register("MMM-MyWordClock", {
     //start update timer
     setInterval(function() {
       self.updateDom(1000);
-    }, 5 * 1000);
+    }, 1 * 1000);
 
 
 
@@ -92,7 +96,7 @@ Module.register("MMM-MyWordClock", {
         scriptsToLoad.push(this.file("layouts/" + this.languages[i] + "_" + this.config.orientation + ".js"));
       }
     } else {
-      scriptsToLoad.push(this.file("layouts/" + cLang + "_" + this.config.orientation + ".js"));
+      scriptsToLoad.push(this.file("layouts/" + cLang + "_" + this.config.orientation + (this.config.everyMinute ? "_minute" : "") + ".js"));
     }
 
     return scriptsToLoad;
@@ -114,11 +118,11 @@ Module.register("MMM-MyWordClock", {
 
     clearTimeout(instance.showTimer);
 
-    //hide all current modules
-    var modules = MM.getModules();
-    modules.enumerate(function(module) {
-      module.hide(instance.config.animationSpeed, {lockString: instance.identifier});
-    });
+    // hide all current modules
+    // var modules = MM.getModules();
+    // modules.enumerate(function(module) {
+    //   module.hide(instance.config.animationSpeed, {lockString: instance.identifier});
+    // });
 
     //show this module
     setTimeout(function() {
@@ -131,18 +135,18 @@ Module.register("MMM-MyWordClock", {
 
     instance.hide(instance.config.animationSpeed);
 
-    setTimeout(function() {
-      //show all current modules
-      var modules = MM.getModules();
-      modules.enumerate(function(module) {
-        if (module.identifier != instance.identifier) {
-          module.show(instance.config.animationSpeed, {lockString: instance.identifier});
-        }
-      });
+    // setTimeout(function() {
+    //   //show all current modules
+    //   var modules = MM.getModules();
+    //   modules.enumerate(function(module) {
+    //     if (module.identifier != instance.identifier) {
+    //       module.show(instance.config.animationSpeed, {lockString: instance.identifier});
+    //     }
+    //   });
 
-      instance.resetTimers();
+    //   instance.resetTimers();
 
-    }, instance.config.animationSpeed);      
+    // }, instance.config.animationSpeed);      
 
 
   },
@@ -162,8 +166,11 @@ Module.register("MMM-MyWordClock", {
     var theTime = moment();
 
     var minuteVal = Math.floor(theTime.minutes()/5) * 5; //round down to the nearest 5
+    if (this.config.everyMinute) {
+      minuteVal = theTime.minutes();
+    } 
 
-    // For every in 5-minute value, we change the colour of highlighted text, and language if configured
+    // For every change in minute value, we change the colour of highlighted text, and language if configured
     if (minuteVal != this.hourSegment) {
       this.hourSegment = minuteVal;
       this.updateCounters();
@@ -176,18 +183,29 @@ Module.register("MMM-MyWordClock", {
     var hourVal = theTime.hours();
 
     var wrapper = document.createElement("div");
-    wrapper.classList.add("clock-grid", "c" + this.colorCounter, this.curLanguage, layout.classes);
+    wrapper.classList.add("clock-grid", "c" + this.colorCounter, this.curLanguage);
+    var extraClasses = layout.classes.split(" ");
+    extraClasses.forEach(function(c) {
+      wrapper.classList.add(c);
+    });
+
+    if (this.config.everyMinute) {
+      wrapper.classList.add("every-minute");
+    }
 
     layout.config.forEach(function(wordGroup) {
       var div = document.createElement("div");
       wordGroup.forEach(function(word) {
+
         var span = document.createElement("span");
 
         var spanContent = word.word;
 
-        if (word.minutes && word.minutes.indexOf(minuteVal) != -1) {
+        if (word.minutes && word.hours && word.minutes.indexOf(minuteVal) != -1 && word.hours.indexOf(hourVal) != -1) {
           span.classList.add("highlighted");
-        } else if (word.hours && word.hours.indexOf(hourVal) != -1) {
+        } else if (word.minutes && !word.hours && word.minutes.indexOf(minuteVal) != -1) {
+          span.classList.add("highlighted");
+        } else if (word.hours && !word.minutes && word.hours.indexOf(hourVal) != -1) {
           span.classList.add("highlighted");
         }
 

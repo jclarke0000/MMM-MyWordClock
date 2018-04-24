@@ -7,6 +7,24 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/raleway-light-webfont.woff2') format('woff2'),
+         url('fonts/raleway-light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: 300;
+}
+
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('fonts/robotoslab-regular-webfont.woff2') format('woff2'),
+         url('fonts/robotoslab-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 /* Type face for highlighted words */
 @font-face {
     font-family: 'Lobster';
@@ -68,6 +86,10 @@
 }
 
 /* Base classes */
+
+.MMM-MyWordClock {
+  background-color: #000;
+}
 
 .MMM-MyWordClock .clock-grid {
   font-family: "Raleway";
@@ -158,7 +180,7 @@
  *  LAYOUT SPECIFIC STYLES
  ***************************/
 
-/* Default styling for tall tall layout */
+/* Default styling for tall layout */
 .MMM-MyWordClock .clock-grid.tall {  
   font-size: 6.771vh;  /* 130px / 1920 * 100 */
   line-height: 12vh;
@@ -169,7 +191,7 @@
   font-size: 7.083vh; /* 136px / 1920 * 100 */
 }
 
-/* Default styling for wide wide layout */
+/* Default styling for wide layout */
 .MMM-MyWordClock .clock-grid.wide {
   line-height: 18vh;
   font-size: 12.963vh; /* 140px / 1080 * 100 */
@@ -178,6 +200,69 @@
 .MMM-MyWordClock .clock-grid.wide .highlighted {
   font-size: 13.519vh;  /* 146px / 1080 * 100 */
 }
+
+/* Default styling for wide every-minute layout */
+
+.MMM-MyWordClock .clock-grid.wide.every-minute div {
+  padding: 0 2.928vw;
+}
+
+.MMM-MyWordClock .clock-grid.wide.every-minute {
+  line-height: 13.5vh;
+  font-size: 9.896vh; /* 76px / 768 * 100 */
+}
+
+.MMM-MyWordClock .clock-grid.wide.every-minute .highlighted {
+  font-size: 10.677vh;  /* 82px / 768 * 100 */
+}
+
+.MMM-MyWordClock .clock-grid.wide.every-minute.letter-grid div {
+  padding: 0 1.5vw;
+}
+
+
+
+.MMM-MyWordClock .clock-grid.wide.every-minute.letter-grid {
+  line-height: 8.35vh;
+  font-size: 6vh; /* 76px / 768 * 100 */
+  font-family: "Raleway";
+  font-weight: 300;
+}
+
+.MMM-MyWordClock .clock-grid.wide.every-minute.letter-grid div > span {
+  width: 4.85vw;
+  text-align: center;
+}
+
+.MMM-MyWordClock .clock-grid.wide.every-minute.letter-grid .highlighted {
+  font-size: 6vh;  /* 82px / 768 * 100 */
+  /*color: #FFF;*/
+  text-shadow: none;
+  font-family: "Raleway";
+  font-weight: 300;
+}
+
+.MMM-MyWordClock .clock-grid.letter-grid.c1 .highlighted {
+  color: #ff2cc6;
+}
+.MMM-MyWordClock .clock-grid.letter-grid.c2 .highlighted {
+  color: #ffca28;
+}
+.MMM-MyWordClock .clock-grid.letter-grid.c3 .highlighted {
+  color: #fff152;
+}
+.MMM-MyWordClock .clock-grid.letter-grid.c4 .highlighted {
+  color: #01f6ff;
+}
+.MMM-MyWordClock .clock-grid.letter-grid.c5 .highlighted {
+  color: #ff3c73;
+}
+.MMM-MyWordClock .clock-grid.letter-grid.c6 .highlighted {
+  color: #00ffae;
+}
+
+
+
 
 /* NL */
 .MMM-MyWordClock .clock-grid.NL.tall {
