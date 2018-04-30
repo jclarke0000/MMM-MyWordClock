@@ -35,7 +35,8 @@ Module.register("MMM-MyWordClock", {
     animationSpeed: 1000,
     language: "EN",
     orientation: "tall",
-    everyMinute: false
+    everyMinute: false,
+    updateSpeed: 1000,
   },
 
   layouts: {},
@@ -78,7 +79,11 @@ Module.register("MMM-MyWordClock", {
 
     //start update timer
     setInterval(function() {
-      self.updateDom(1000);
+      if (self.config.updateSpeed == 0) {
+        self.updateDom();
+      } else {      
+        self.updateDom(self.config.updateSpeed);
+      }
     }, 1 * 1000);
 
 
