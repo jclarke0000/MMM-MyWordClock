@@ -37,6 +37,7 @@ Module.register("MMM-MyWordClock", {
     orientation: "tall",
     everyMinute: false,
     updateSpeed: 1000,
+    variableTransparency: false
   },
 
   layouts: {},
@@ -79,11 +80,27 @@ Module.register("MMM-MyWordClock", {
 
     //start update timer
     setInterval(function() {
-      if (self.config.updateSpeed == 0) {
-        self.updateDom();
-      } else {      
-        self.updateDom(self.config.updateSpeed);
+
+      var theTime = moment();
+
+      var minuteVal = Math.floor(theTime.minutes()/5) * 5; //round down to the nearest 5
+      if (self.config.everyMinute) {
+        minuteVal = theTime.minutes();
+      } 
+
+      // For every change in minute value, we change the colour of highlighted text, and language if configured
+      if (minuteVal != self.hourSegment) {
+        self.hourSegment = minuteVal;
+        self.updateCounters();
+  
+        if (self.config.updateSpeed == 0) {
+          self.updateDom();
+        } else {      
+          self.updateDom(self.config.updateSpeed);
+        }
       }
+
+      
     }, 1 * 1000);
 
 
@@ -168,23 +185,19 @@ Module.register("MMM-MyWordClock", {
   getDom: function() {
 
 
+    var self = this;
     var theTime = moment();
+
+    var layout = this.layouts[this.curLanguage];
+    if (theTime.minutes() >= layout.nextHourAt ) {
+      theTime.add(1, "hours");
+    }
 
     var minuteVal = Math.floor(theTime.minutes()/5) * 5; //round down to the nearest 5
     if (this.config.everyMinute) {
       minuteVal = theTime.minutes();
     } 
 
-    // For every change in minute value, we change the colour of highlighted text, and language if configured
-    if (minuteVal != this.hourSegment) {
-      this.hourSegment = minuteVal;
-      this.updateCounters();
-    }
-
-    var layout = this.layouts[this.curLanguage];
-    if (theTime.minutes() >= layout.nextHourAt ) {
-      theTime.add(1, "hours");
-    }
     var hourVal = theTime.hours();
 
     var wrapper = document.createElement("div");
@@ -206,12 +219,24 @@ Module.register("MMM-MyWordClock", {
 
         var spanContent = word.word;
 
+        var wordIsHighlighted = false;
         if (word.minutes && word.hours && word.minutes.indexOf(minuteVal) != -1 && word.hours.indexOf(hourVal) != -1) {
           span.classList.add("highlighted");
+          wordIsHighlighted = true;
         } else if (word.minutes && !word.hours && word.minutes.indexOf(minuteVal) != -1) {
           span.classList.add("highlighted");
+          wordIsHighlighted = true;
         } else if (word.hours && !word.minutes && word.hours.indexOf(hourVal) != -1) {
           span.classList.add("highlighted");
+          wordIsHighlighted = true;
+        }
+
+        if (self.config.variableTransparency) {
+          if (wordIsHighlighted) {
+            span.style.opacity = self.getRandom(0.7, 1);            
+          } else {
+            span.style.opacity = self.getRandom(0.5, 1);            
+          }
         }
 
         //test for variations
@@ -259,7 +284,11 @@ Module.register("MMM-MyWordClock", {
       }
     }
 
-  }
+  },
+
+  getRandom: function rand(min, max) {
+    return (Math.random() * (max - min)) + min;
+  }  
 
 });
 
