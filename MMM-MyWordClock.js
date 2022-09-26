@@ -37,7 +37,8 @@ Module.register("MMM-MyWordClock", {
     orientation: "tall",
     everyMinute: false,
     updateSpeed: 1000,
-    variableTransparency: false
+    variableTransparency: false,
+    wakeMessage: "USER_PRESENCE"
   },
 
   layouts: {},
@@ -276,7 +277,7 @@ Module.register("MMM-MyWordClock", {
       this.hide();
       this.resetTimers();
 
-    } else if (notification === "USER_PRESENCE" && payload === true) {
+    } else if (notification === this.config.wakeMessage) {
       if (this.hidden) {
         this.resetTimers();
       } else {

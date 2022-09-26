@@ -10,8 +10,9 @@ to a screensaver.  After a timeout you configure, all of your modules are hidden
 
 ![Screen Shot](/../screenshots/MMM-MyWordClock_hero.jpg?raw=true "Screen Shot")
 
-It requires the use of paviro's MMM-PIR-Sensor module to detect motion and
-cancel the clock display. https://github.com/paviro/MMM-PIR-Sensor
+This requires the use of another module to provide a message to cancel the
+screensaver. It defaults to the message "USER_PRESENSE" as provided by paviro's
+MMM-PIR-Sensor module to detect motion. https://github.com/paviro/MMM-PIR-Sensor
 
 This is baased on the great work done by brobergp on MMM-TextClock.
 https://github.com/brobergp/MMM-TextClock.
@@ -75,6 +76,10 @@ it a header.  See below for an example config entry.
     <tr>
       <td><code>orientation</code></td>
       <td>Your screen orientation, e.g.: <code>tall</code> or <code>wide</code>.<br><br><strong>Type</strong> <code>String</code><br>Defaults to <code>tall</code> (English).</td>
+    </tr>
+    <tr>
+      <td><code>wakeMessage</code></td>
+      <td>The message that triggers the screensaver to hide. It default's to <code>USER_PRESENCE</code> as provided by the MMM-PIR-Sensor module, but if you're using EXT-Pir for moption detection, set this to <code>EXT_SCREEN-WAKEUP</code>.<br><br><strong>Type</strong> <code>String</code><br>Defaults to <code>USER_PRESENCE</code>.</td>
     </tr>
   </tbody>
 </table>
