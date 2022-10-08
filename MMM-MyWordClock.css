@@ -242,6 +242,45 @@
   font-weight: 300;
 }
 
+/* Default styling for tall every-minute layout */
+
+.MMM-MyWordClock .clock-grid.tall.every-minute div {
+  margin: 0 1.5vw;
+}
+
+.MMM-MyWordClock .clock-grid.tall.every-minute {
+  line-height: 4.9vh;
+  font-size: 2.917vh; /* 56px / 1920 * 100 */
+}
+
+.MMM-MyWordClock .clock-grid.tall.every-minute .highlighted {
+  font-size: 2.917vh;  /* 56px / 1920 * 100 */
+}
+
+.MMM-MyWordClock .clock-grid.tall.every-minute.letter-grid div {
+  padding: 0 0;
+}
+
+.MMM-MyWordClock .clock-grid.tall.every-minute.letter-grid {
+  line-height: 4.9vh;
+  font-size: 2.917vh; /* 56px / 1920 * 100 */
+  font-family: "Raleway";
+  font-weight: 300;
+}
+
+.MMM-MyWordClock .clock-grid.tall.every-minute.letter-grid div > span {
+  width: 8.818vw;
+  text-align: center;
+}
+
+.MMM-MyWordClock .clock-grid.tall.every-minute.letter-grid .highlighted {
+  font-size: 2.917vh;  /* 56px / 1920 * 100 */
+  /*color: #FFF;*/
+  text-shadow: none;
+  font-family: "Raleway";
+  font-weight: 300;
+}
+
 .MMM-MyWordClock .clock-grid.letter-grid.c1 .highlighted {
   color: #ff2cc6;
 }
